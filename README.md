@@ -1,10 +1,12 @@
 > **Release mirror.** This repository is a read-only snapshot of
-> `overturo` 1.0.0, published from Overturo's main
+> `overturo` 1.0.1, published from Overturo's main
 > development repository. Issues and pull requests are welcome here; accepted
 > changes are ported upstream and appear in the next release snapshot.
 > Security reports: see [SECURITY.md](./SECURITY.md).
 
 # overturo
+
+**Documentation:** <https://overturo.com/developers/docs> · **Agent authorization:** <https://overturo.com/developers/agent-authorization> · **API reference:** <https://overturo.com/developers/openapi>
 
 Python SDK for [Overturo](https://overturo.com) — the trust conductor.
 
@@ -52,7 +54,8 @@ Typed refusals raise `OverturoValidationError` carrying the machine code in `rea
 ## Contract and testing
 
 This client is written against Overturo's published OpenAPI document, kept at
-<https://github.com/overturo/openapi>. When the client and the API disagree, the
+<https://github.com/overturo/openapi> and rendered at
+<https://overturo.com/developers/openapi>, where each operation lists the SDKs that reach it. When the client and the API disagree, the
 document is the authority; a change to it is a change to this client.
 
 The test suite stubs recorded operations from the shared API response corpus

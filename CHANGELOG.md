@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.0.1 (2026-09-12)
+
+### Changed
+
+- The README links the public documentation and the rendered API reference at overturo.com/developers; the vendored API response corpus is re-recorded against the published document, whose operations now list the SDKs that reach them (`x-overturo-sdks`).
+
 ## 1.0.0 (unreleased)
 
 Initial release. Consolidates `overturo-authorize` v1.2.0 and

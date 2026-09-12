@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "overturo"
-version = "1.0.0"
+version = "1.0.1"
 description = "Overturo SDK — authorize, oversight, and decisions for backend integrators"
 readme = "README.md"
 license = { text = "Apache-2.0" }
@@ -42,7 +42,7 @@ test = ["pytest>=8", "pytest-asyncio>=0.23", "respx>=0.21"]
 lint = ["ruff>=0.6", "mypy>=1.10"]
 
 [project.urls]
-Homepage = "https://developer.overturo.com/sdks/python"
+Homepage = "https://overturo.com/developers/docs"
 Repository = "https://github.com/overturo/sdk-python"
 Issues = "https://github.com/overturo/sdk-python/issues"
 
