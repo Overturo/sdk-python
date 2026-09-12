@@ -1,0 +1,44 @@
+{
+  "operationId": "Applications_Webhooks_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/applications/<PREFIX_ID:1>/webhooks",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "webhook_subscription": {
+        "url": "https://example.com/hooks/corpus",
+        "events": [
+          "consent.granted"
+        ],
+        "enabled": true
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "webhook_subscription": {
+        "id": "<PREFIX_ID:2>",
+        "application_id": "<PREFIX_ID:1>",
+        "url": "https://example.com/hooks/corpus",
+        "events": [
+          "consent.granted"
+        ],
+        "enabled": true,
+        "failure_count": 0,
+        "disabled_at": null,
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-01-01T00:00:00Z",
+        "secret": "<REDACTED>"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

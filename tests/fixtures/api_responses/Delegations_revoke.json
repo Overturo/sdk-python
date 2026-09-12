@@ -1,0 +1,39 @@
+{
+  "operationId": "Delegations_revoke",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/v1/delegations/<PREFIX_ID:1>/revoke",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "delegation_grant": {
+        "id": "<PREFIX_ID:1>",
+        "principal_id": "<PREFIX_ID:2>",
+        "delegate_id": "<PREFIX_ID:3>",
+        "delegation_type": "peer",
+        "delegated_scopes": [
+          "openid"
+        ],
+        "status": "revoked",
+        "starts_at": null,
+        "expires_at": "2026-01-01T00:00:00Z",
+        "revoked_at": "2026-01-01T00:00:00Z",
+        "allow_sub_delegation": false,
+        "max_actions_per_day": null,
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

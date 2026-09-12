@@ -1,0 +1,34 @@
+{
+  "operationId": "Decisions_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/decisions",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "kind": "consent",
+      "subject_ref": "<PREFIX_ID:1>",
+      "delivery_mode": "redirect"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "decision": {
+        "session_token": "<TOKEN>",
+        "kind": "consent",
+        "mode": "redirect",
+        "deadline_at": "2026-01-01T00:00:00Z",
+        "decision_url": "https://example.com/URL_PLACEHOLDER",
+        "embed_url": "https://example.com/URL_PLACEHOLDER"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

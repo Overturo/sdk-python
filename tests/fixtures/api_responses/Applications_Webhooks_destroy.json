@@ -1,0 +1,19 @@
+{
+  "operationId": "Applications_Webhooks_destroy",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/v1/applications/<PREFIX_ID:1>/webhooks/<PREFIX_ID:2>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 204,
+    "headers": {},
+    "body": null
+  },
+  "document": "37b0741e6c871f4e"
+}

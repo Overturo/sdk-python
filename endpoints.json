@@ -1,0 +1,19 @@
+{
+  "sdk": "overturo-py",
+  "endpoints": [
+    { "method": "POST", "path": "/api/v1/grants/{id}/authorize" },
+    { "method": "POST", "path": "/api/v1/grants/{id}/token" },
+    { "method": "GET", "path": "/api/v1/oap/chronicles", "unpublished": "internal_name" },
+    { "method": "POST", "path": "/api/v1/oap/attestations", "discovered": "oversight_attestation_endpoint" },
+    { "method": "POST", "path": "/api/v1/oap/attestations/heartbeat", "discovered": "oversight_attestation_heartbeat_endpoint" },
+    { "method": "POST", "path": "/api/v1/oap/escalations", "discovered": "oversight_escalation_endpoint" },
+    { "method": "POST", "path": "/api/v1/oap/revocations", "discovered": "oversight_revocation_endpoint" },
+    { "method": "GET", "path": "/api/v1/authorization_receipts/{id}" },
+    { "method": "POST", "path": "/api/v1/disclosure_receipts" },
+    { "method": "POST", "path": "/api/v1/decisions" },
+    { "method": "GET", "path": "/api/v1/decisions/{session_token}" },
+    { "method": "GET", "path": "/api/v1/decisions/by-escalation/{escalation_prefix_id}/wait" },
+    { "method": "GET", "path": "/api/v1/decisions/flows/{flow_id}/disclosures" },
+    { "method": "GET", "path": "/.well-known/openid-configuration", "contract": false }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "operationId": "Decisions_cancel",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/decisions/<TOKEN>/cancel",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "status": "cancelled"
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

@@ -1,0 +1,158 @@
+{
+  "operationId": "AuthorizationReceipts_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/authorization_receipts/<PREFIX_ID:1>",
+    "query": {
+      "flavor": "signed"
+    },
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "receipt": {
+        "event": [
+          {
+            "entity_id": "<PREFIX_ID:2>",
+            "event_time": "2026-01-01T00:00:00Z",
+            "event_type": "explicit",
+            "event_state": "authority requested"
+          },
+          {
+            "entity_id": "<PREFIX_ID:2>",
+            "event_time": "2026-01-01T00:00:00Z",
+            "event_type": "explicit",
+            "event_state": "authority granted",
+            "validity_duration": "P11M30DT4H38M54S"
+          }
+        ],
+        "record": {
+          "record_id": "<PREFIX_ID:1>",
+          "conforms_to": "ISO/IEC TS 27560:2023",
+          "record_type": "authorization_record",
+          "schema_version": "overturo-cr/2.9",
+          "pii_principal_id": "<PREFIX_ID:2>"
+        },
+        "authority": {
+          "valid_from": "2026-01-01T00:00:00Z",
+          "cooling_off": "PT1M",
+          "time_bounds": {
+            "expires_at": "2026-01-01T00:00:00Z",
+            "active_days": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "active_hours": {
+              "end": "17:00",
+              "start": "09:00"
+            }
+          },
+          "valid_until": "2026-01-01T00:00:00Z",
+          "scope_bounds": {
+            "denied_scopes": [
+              "admin"
+            ],
+            "allowed_scopes": [
+              "profile",
+              "email"
+            ]
+          },
+          "value_bounds": {
+            "currency": "USD",
+            "max_total_value": 100.0,
+            "max_per_transaction": 10.0
+          },
+          "action_bounds": {
+            "denied_actions": [
+              "delete"
+            ],
+            "allowed_actions": [
+              "read",
+              "negotiate",
+              "share"
+            ]
+          },
+          "escalation_bounds": {
+            "escalation_triggers": [
+              {
+                "type": "new_counterparty"
+              },
+              {
+                "type": "value_above",
+                "threshold": 5.0
+              }
+            ],
+            "escalation_timeout_hours": 48
+          },
+          "reputation_bounds": {
+            "min_counterparty_score": 60,
+            "min_counterparty_confidence": "medium"
+          },
+          "withdrawal_method": "https://overturo.com/surfaces/delegate"
+        },
+        "extensions": {
+          "consent_flow_id": "<PREFIX_ID:1>"
+        },
+        "pii_processing": {
+          "language": "en",
+          "purposes": [
+            {
+              "purpose": "Test Purpose",
+              "purpose_id": "<PREFIX_ID:3>",
+              "description": "A test consent purpose",
+              "lawful_basis": "Legitimate interest",
+              "pii_category": [
+                "Profile Information"
+              ],
+              "pii_information": [
+                {
+                  "pii_type": "Profile Information",
+                  "pii_optional": true,
+                  "pii_attribute_id": "profile"
+                }
+              ],
+              "consent_mechanism": "Documented basis (no user action required)"
+            }
+          ],
+          "jurisdiction": "unspecified"
+        },
+        "party_identification": [
+          {
+            "party_id": "<PREFIX_ID:4>",
+            "party_name": "Corpus Application",
+            "party_role": "controller",
+            "provenance": "display_name"
+          },
+          {
+            "party_id": "overturo",
+            "party_name": "OmVi Labs Inc",
+            "party_role": "processor"
+          }
+        ]
+      },
+      "signature": {
+        "algorithm": "Ed25519",
+        "canonicalization": "overturo-jcs-1",
+        "region": "us",
+        "key_version": "us-1",
+        "value": "<SIGNATURE>",
+        "public_key": "<PUBLIC_KEY>",
+        "key_discovery": "https://overturo.com/.well-known/witness-configuration",
+        "signed_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

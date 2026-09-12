@@ -1,0 +1,25 @@
+{
+  "operationId": "Decisions_wait",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/decisions/by-escalation/<PREFIX_ID:1>/wait",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "status": "pending",
+      "wait_again": true,
+      "retry_after": 0
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

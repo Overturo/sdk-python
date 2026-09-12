@@ -1,0 +1,39 @@
+{
+  "operationId": "Vouches_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/vouches",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "recipient_id": "<PREFIX_ID:1>",
+      "claim_template_id": "<PREFIX_ID:2>",
+      "confidence": "medium",
+      "claim_data": {
+        "full_name": "Corpus Person"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "vouch": {
+        "id": "<PREFIX_ID:3>",
+        "voucher_id": "<PREFIX_ID:4>",
+        "recipient_id": "<PREFIX_ID:1>",
+        "claim_type": "identity",
+        "confidence": "medium",
+        "status": "active",
+        "expires_at": null,
+        "created_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

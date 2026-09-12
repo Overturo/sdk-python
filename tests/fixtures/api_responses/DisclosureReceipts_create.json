@@ -1,0 +1,119 @@
+{
+  "operationId": "DisclosureReceipts_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/disclosure_receipts",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "flow_id": "<PREFIX_ID:1>",
+      "agent_id": "<PREFIX_ID:2>",
+      "disclosed_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "disclosure_receipt": {
+        "record_id": "<PREFIX_ID:3>",
+        "record": {
+          "record": {
+            "schema_version": "overturo-cr/2.9",
+            "conforms_to": "ISO/IEC TS 27560:2023",
+            "record_id": "<PREFIX_ID:3>",
+            "record_type": "notice_record",
+            "anonymous": true
+          },
+          "pii_processing": {
+            "language": "en",
+            "jurisdiction": "unspecified",
+            "privacy_notice": {
+              "reference": "<PREFIX_ID:1>/notice/v1",
+              "hash": "<HASH>"
+            },
+            "collection_method": [
+              "Documented basis (no user action required)"
+            ],
+            "storage_locations": [
+              "US"
+            ],
+            "withdrawal_method": "https://overturo.com/consent-access",
+            "recipient_third_parties": [],
+            "privacy_rights": [
+              "https://overturo.com/consent-access"
+            ],
+            "purposes": [
+              {
+                "purpose": "Outreach",
+                "purpose_id": "outreach",
+                "description": "A test consent purpose",
+                "lawful_basis": "Legitimate interest",
+                "consent_mechanism": "Documented basis (no user action required)",
+                "pii_category": [
+                  "Basic Identity"
+                ],
+                "pii_information": [
+                  {
+                    "pii_type": "Basic Identity",
+                    "pii_attribute_id": "openid",
+                    "pii_optional": true
+                  }
+                ]
+              }
+            ]
+          },
+          "party_identification": [
+            {
+              "party_id": "<PREFIX_ID:4>",
+              "party_name": "Corpus Application",
+              "party_role": "controller",
+              "provenance": "display_name"
+            },
+            {
+              "party_id": "overturo",
+              "party_name": "OmVi Labs Inc",
+              "party_role": "processor"
+            }
+          ],
+          "event": [
+            {
+              "event_time": "2026-01-01T00:00:00Z",
+              "entity_id": "<PREFIX_ID:4>",
+              "event_type": "regular",
+              "event_state": "notice shown"
+            }
+          ],
+          "extensions": {
+            "collection_mechanism": "documented",
+            "delivery_mode": "redirect",
+            "scopes": [
+              "openid",
+              "profile"
+            ],
+            "sensitive": false,
+            "consent_flow_id": "<PREFIX_ID:1>",
+            "agent_disclosures": [
+              {
+                "agent": "<PREFIX_ID:2>",
+                "accountability_record": "https://overturo.com/.well-known/transparency/agents/<PREFIX_ID:2>",
+                "capability_manifest": {
+                  "reference": "<PREFIX_ID:2>/manifest/v1",
+                  "hash": "<HASH>"
+                },
+                "delivery_provenance": "declared",
+                "disclosed_at": "2026-01-01T00:00:00Z"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

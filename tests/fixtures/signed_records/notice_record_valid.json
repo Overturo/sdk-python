@@ -1,0 +1,104 @@
+{
+  "receipt": {
+    "event": [
+      {
+        "entity_id": "oauth_app_dev_a4qW8ENrx7nyl85DF199JoLP215RjAYm",
+        "event_time": "2026-08-01T12:00:00Z",
+        "event_type": "regular",
+        "event_state": "notice shown"
+      }
+    ],
+    "record": {
+      "anonymous": true,
+      "record_id": "ctx_dev_gKqJR7NOkMZev0RNij0PBox9EyAzaQ4w",
+      "conforms_to": "ISO/IEC TS 27560:2023",
+      "record_type": "notice_record",
+      "schema_version": "overturo-cr/2.8"
+    },
+    "extensions": {
+      "scopes": [
+        "openid",
+        "profile"
+      ],
+      "sensitive": false,
+      "delivery_mode": "redirect",
+      "consent_flow_id": "flw_dev_jm9GY7oVn38XDenYTl54bLJQAWrveKBk",
+      "agent_disclosures": [
+        {
+          "agent": "agent_dev_8PogVGy6Kr4LOkoDsrYOxDWQ5RMY0le1",
+          "disclosed_at": "2026-08-01T10:00:00Z",
+          "capability_manifest": {
+            "hash": "sha256:bdbbc52778cd6fc70e935e9c5f93de35580ba1ecb559a23357b6e38ce48e258d",
+            "reference": "agent_dev_8PogVGy6Kr4LOkoDsrYOxDWQ5RMY0le1/manifest/v1"
+          },
+          "delivery_provenance": "declared",
+          "accountability_record": "https://overturo.com/.well-known/transparency/agents/agent_dev_8PogVGy6Kr4LOkoDsrYOxDWQ5RMY0le1"
+        }
+      ],
+      "collection_mechanism": "documented"
+    },
+    "pii_processing": {
+      "language": "en",
+      "purposes": [
+        {
+          "purpose": "Recording",
+          "purpose_id": "recording",
+          "description": "A test consent purpose",
+          "lawful_basis": "Consent",
+          "pii_category": [
+            "Basic Identity"
+          ],
+          "pii_information": [
+            {
+              "pii_type": "Basic Identity",
+              "pii_optional": true,
+              "pii_attribute_id": "openid"
+            }
+          ],
+          "retention_period": "P90D",
+          "consent_mechanism": "Explicit opt-in consent"
+        }
+      ],
+      "jurisdiction": "unspecified",
+      "privacy_notice": {
+        "url": "https://corpus.example/privacy",
+        "hash": "sha256:0eaa45bf6ef55ccb5c868f8c7b556668301b400c462dfb63696b4fa219a3b3f3",
+        "reference": "flw_dev_jm9GY7oVn38XDenYTl54bLJQAWrveKBk/notice/v1"
+      },
+      "privacy_rights": [
+        "https://overturo.com/consent-access"
+      ],
+      "collection_method": [
+        "Documented basis (no user action required)"
+      ],
+      "storage_locations": [
+        "US"
+      ],
+      "withdrawal_method": "https://overturo.com/consent-access",
+      "recipient_third_parties": []
+    },
+    "party_identification": [
+      {
+        "party_id": "oauth_app_dev_a4qW8ENrx7nyl85DF199JoLP215RjAYm",
+        "party_name": "Corpus App",
+        "party_role": "controller",
+        "provenance": "display_name"
+      },
+      {
+        "party_id": "overturo",
+        "party_name": "OmVi Labs Inc",
+        "party_role": "processor"
+      }
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "overturo-jcs-1",
+    "region": "us",
+    "key_version": "us-1",
+    "value": "nNDu+bjEO6LfySQr9iagvMjHHiAXZ0QKS1G82V3nxI8iiti0crWlIFSGLvra2/77j+TeYDPkP4KaxWsa1UR5Bw==",
+    "public_key": "89tpau2cCQo5wIc20CXNlfSAe3W6Yb51dfQ/dxC229s=",
+    "key_discovery": "https://overturo.com/.well-known/witness-configuration",
+    "signed_at": "2026-08-01T12:00:00Z"
+  }
+}

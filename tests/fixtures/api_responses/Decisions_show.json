@@ -1,0 +1,52 @@
+{
+  "operationId": "Decisions_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/decisions/<TOKEN>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "decision": {
+        "session_token": "<TOKEN>",
+        "kind": "consent",
+        "mode": "redirect",
+        "status": "pending",
+        "deadline_at": "2026-01-01T00:00:00Z",
+        "expires_at": "2026-01-01T00:00:00Z",
+        "subject_ref": "<PREFIX_ID:1>",
+        "current_step": 1,
+        "total_steps": 3,
+        "steps": [
+          {
+            "number": 1,
+            "key": "authenticate",
+            "title": "Sign In"
+          },
+          {
+            "number": 2,
+            "key": "identity",
+            "title": "Confirm Your Identity"
+          },
+          {
+            "number": 3,
+            "key": "review",
+            "title": "Review & Authorize"
+          }
+        ],
+        "completed_at": null,
+        "consent_token": null
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

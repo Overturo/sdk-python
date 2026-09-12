@@ -1,0 +1,119 @@
+{
+  "flow": {
+    "schema": "overturo-disclosure/1",
+    "flow": {
+      "id": "<FLOW_ID>",
+      "name": "Northwind Health",
+      "version": 1,
+      "kind": "consent"
+    },
+    "application": {
+      "name": "Northwind Health",
+      "primary_color": "#0B5FFF",
+      "logo_url": null
+    },
+    "purposes": [
+      {
+        "name": "appointment_scheduling",
+        "label": "Appointment scheduling",
+        "description": "Book and manage your appointments.",
+        "mechanism": "explicit",
+        "legal_basis": "consent",
+        "required": false,
+        "data_labels": [
+          "Identity"
+        ]
+      },
+      {
+        "name": "care_reminders",
+        "label": "Care reminders",
+        "description": "Send you reminders about upcoming care.",
+        "mechanism": "opt_out",
+        "legal_basis": "consent",
+        "required": false,
+        "data_labels": [
+          "Identity"
+        ]
+      },
+      {
+        "name": "security_logging",
+        "label": "Security activity logging",
+        "description": null,
+        "mechanism": "informed",
+        "legal_basis": "consent",
+        "required": false,
+        "data_labels": [
+          "Identity"
+        ]
+      },
+      {
+        "name": "records_retention",
+        "label": "Records retention",
+        "description": "Keep records as required by law.",
+        "mechanism": "documented",
+        "legal_basis": "legal_obligation",
+        "required": true,
+        "data_labels": [
+          "Identity"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "preferred_name",
+        "label": "Preferred name",
+        "field_type": "text",
+        "required": false,
+        "section": "input",
+        "completed_by": "principal"
+      },
+      {
+        "name": "clinic_location",
+        "label": "Clinic location",
+        "field_type": "text",
+        "required": false,
+        "section": "input",
+        "completed_by": "application"
+      }
+    ],
+    "steps": [
+      {
+        "key": "authenticate",
+        "title": "Sign In"
+      },
+      {
+        "key": "identity",
+        "title": "Confirm Your Identity"
+      },
+      {
+        "key": "inform",
+        "title": "Data Processing Notice"
+      },
+      {
+        "key": "opt_out",
+        "title": "Consent Choices"
+      },
+      {
+        "key": "review",
+        "title": "Review & Authorize"
+      }
+    ],
+    "presentation": {
+      "button_mode": "authorize",
+      "display_label": "Northwind Health"
+    },
+    "outcomes": [
+      "granted",
+      "denied"
+    ],
+    "expiry": {
+      "consent_duration_days": 365
+    },
+    "locale": {
+      "requested": "default",
+      "resolved": "en",
+      "fallback": "en"
+    },
+    "revision": "<REVISION>"
+  }
+}

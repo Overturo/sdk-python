@@ -1,0 +1,28 @@
+{
+  "operationId": "PreviewTokens_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/preview_tokens",
+    "headers": {
+      "X-Publishable-Key": "pk_test_corpus",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "previewable_type": "template",
+      "previewable_id": "<PREFIX_ID:1>"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "token": "<TOKEN>",
+      "preview_url": "https://example.com/URL_PLACEHOLDER",
+      "expires_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

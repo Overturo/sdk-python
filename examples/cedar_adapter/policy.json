@@ -1,0 +1,29 @@
+{
+  "$comment": "Cedar-style policy fixture. Each rule has effect (permit|forbid), an optional principal/action/resource match, and an optional context predicate. The in-memory evaluator iterates rules in order; first matching rule wins. Production: replace with the Cedar engine reading a real .cedar policy file.",
+  "rules": [
+    {
+      "name": "read_profile_allowed",
+      "effect": "permit",
+      "principal": {"type": "User"},
+      "action": "read",
+      "resource": {"scope_in": ["openid", "profile", "email"]},
+      "context": null
+    },
+    {
+      "name": "high_value_write_forbidden",
+      "effect": "forbid",
+      "principal": {"type": "User"},
+      "action": "write",
+      "resource": null,
+      "context": {"value_gt": 1000}
+    },
+    {
+      "name": "write_default_allowed",
+      "effect": "permit",
+      "principal": {"type": "User"},
+      "action": "write",
+      "resource": null,
+      "context": null
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "operationId": "QuorumRequests_index",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/quorum_requests",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "quorum_requests": [
+        {
+          "id": "<PREFIX_ID:1>",
+          "initiator_id": "<PREFIX_ID:2>",
+          "status": "voting",
+          "action_type": "fund_release",
+          "action_payload": {
+            "amount": 10000
+          },
+          "justification": null,
+          "required_approvals": 2,
+          "approval_count": 0,
+          "denial_count": 0,
+          "deadline_at": "2026-01-01T00:00:00Z",
+          "resolved_at": null,
+          "created_at": "2026-01-01T00:00:00Z",
+          "agreement_id": "<PREFIX_ID:3>"
+        }
+      ]
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

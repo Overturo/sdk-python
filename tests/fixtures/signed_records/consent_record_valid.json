@@ -1,0 +1,99 @@
+{
+  "receipt": {
+    "event": [
+      {
+        "entity_id": "oauth_app_dev_a4qW8ENrx7nyl85DF199JoLP215RjAYm",
+        "event_time": "2026-08-01T12:00:00Z",
+        "event_type": "explicit",
+        "event_state": "consent requested"
+      },
+      {
+        "entity_id": "persona_dev_7wdrzx8JGy2mbz1oCoqJRQ1gpLkn5VD9",
+        "event_time": "2026-08-01T12:00:00Z",
+        "event_type": "explicit",
+        "event_state": "consent given"
+      }
+    ],
+    "record": {
+      "record_id": "ctx_dev_RWO43kr7eqJD8PL9C2MP8ZYnzdm65M1N",
+      "conforms_to": "ISO/IEC TS 27560:2023",
+      "record_type": "consent_record",
+      "schema_version": "overturo-cr/2.8",
+      "pii_principal_id": "persona_dev_7wdrzx8JGy2mbz1oCoqJRQ1gpLkn5VD9"
+    },
+    "extensions": {
+      "scopes": [
+        "openid",
+        "profile"
+      ],
+      "sensitive": false,
+      "delivery_mode": "redirect",
+      "consent_flow_id": "flw_dev_jm9GY7oVn38XDenYTl54bLJQAWrveKBk",
+      "collection_mechanism": "explicit"
+    },
+    "pii_processing": {
+      "language": "en",
+      "purposes": [
+        {
+          "purpose": "Recording",
+          "purpose_id": "recording",
+          "description": "A test consent purpose",
+          "lawful_basis": "Consent",
+          "pii_category": [
+            "Basic Identity"
+          ],
+          "pii_information": [
+            {
+              "pii_type": "Basic Identity",
+              "pii_optional": true,
+              "pii_attribute_id": "openid"
+            }
+          ],
+          "retention_period": "P90D",
+          "consent_mechanism": "Explicit opt-in consent"
+        }
+      ],
+      "jurisdiction": "unspecified",
+      "privacy_notice": {
+        "url": "https://corpus.example/privacy",
+        "hash": "sha256:0eaa45bf6ef55ccb5c868f8c7b556668301b400c462dfb63696b4fa219a3b3f3",
+        "reference": "flw_dev_jm9GY7oVn38XDenYTl54bLJQAWrveKBk/notice/v1"
+      },
+      "privacy_rights": [
+        "https://overturo.com/surfaces/consent",
+        "https://overturo.com/user/data_export"
+      ],
+      "collection_method": [
+        "Explicit opt-in consent"
+      ],
+      "storage_locations": [
+        "US"
+      ],
+      "withdrawal_method": "https://overturo.com/surfaces/consent",
+      "recipient_third_parties": []
+    },
+    "party_identification": [
+      {
+        "party_id": "oauth_app_dev_a4qW8ENrx7nyl85DF199JoLP215RjAYm",
+        "party_name": "Corpus App",
+        "party_role": "controller",
+        "provenance": "display_name"
+      },
+      {
+        "party_id": "overturo",
+        "party_name": "OmVi Labs Inc",
+        "party_role": "processor"
+      }
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "overturo-jcs-1",
+    "region": "us",
+    "key_version": "us-1",
+    "value": "RiL65Mmb1EJPTUJFOmELOXo38so6hJOlNfmvaieBss3QMHmLWT19nnH7KKl/oCgcr8tyj+axFBW7pA/lpg6UDQ==",
+    "public_key": "89tpau2cCQo5wIc20CXNlfSAe3W6Yb51dfQ/dxC229s=",
+    "key_discovery": "https://overturo.com/.well-known/witness-configuration",
+    "signed_at": "2026-08-01T12:00:00Z"
+  }
+}

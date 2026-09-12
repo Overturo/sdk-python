@@ -1,0 +1,26 @@
+{
+  "operationId": "Vouches_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/vouches/<PREFIX_ID:1>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "error": {
+        "code": "not_found",
+        "message": "Vouch not found"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

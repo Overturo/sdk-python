@@ -1,0 +1,54 @@
+{
+  "schema": "overturo-signed-record-corpus/1",
+  "generated_by": "spec/conformance/signed_record_corpus_spec.rb (UPDATE_SIGNED_RECORD_FIXTURES=1)",
+  "published_keys": {
+    "us-1": "89tpau2cCQo5wIc20CXNlfSAe3W6Yb51dfQ/dxC229s=",
+    "us-2": "UuXs0gRA8H0u7M8UFR88DgKPQHZEM4o7FI6Z14MjcVY="
+  },
+  "cases": [
+    {
+      "fixture": "authorization_record_valid.json",
+      "expect": "valid",
+      "record_type": "authorization_record",
+      "key_version": "us-1"
+    },
+    {
+      "fixture": "consent_record_valid.json",
+      "expect": "valid",
+      "record_type": "consent_record",
+      "key_version": "us-1"
+    },
+    {
+      "fixture": "notice_record_valid.json",
+      "expect": "valid",
+      "record_type": "notice_record",
+      "key_version": "us-1"
+    },
+    {
+      "fixture": "rotated_key_version.json",
+      "expect": "valid",
+      "record_type": "authorization_record",
+      "key_version": "us-2"
+    },
+    {
+      "fixture": "tampered_receipt.json",
+      "expect": "signature_failed"
+    },
+    {
+      "fixture": "wrong_embedded_key.json",
+      "expect": "key_mismatch"
+    },
+    {
+      "fixture": "unknown_key_version.json",
+      "expect": "unknown_key_version"
+    },
+    {
+      "fixture": "manifest_pin_content.json",
+      "expect": "manifest_valid"
+    },
+    {
+      "fixture": "manifest_pin_mismatch.json",
+      "expect": "manifest_hash_mismatch"
+    }
+  ]
+}

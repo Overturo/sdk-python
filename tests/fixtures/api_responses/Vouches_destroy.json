@@ -1,0 +1,32 @@
+{
+  "operationId": "Vouches_destroy",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/v1/vouches/<PREFIX_ID:1>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "vouch": {
+        "id": "<PREFIX_ID:1>",
+        "voucher_id": "<PREFIX_ID:2>",
+        "recipient_id": "<PREFIX_ID:3>",
+        "claim_type": "identity",
+        "confidence": "medium",
+        "status": "revoked",
+        "expires_at": null,
+        "created_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

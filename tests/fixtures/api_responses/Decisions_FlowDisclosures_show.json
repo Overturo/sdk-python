@@ -1,0 +1,81 @@
+{
+  "operationId": "Decisions_FlowDisclosures_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/decisions/flows/<PREFIX_ID:1>/disclosures",
+    "headers": {
+      "X-Publishable-Key": "pk_test_corpus",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "flow": {
+        "schema": "overturo-disclosure/1",
+        "flow": {
+          "id": "<PREFIX_ID:1>",
+          "name": "Corpus Application",
+          "version": 1,
+          "kind": "consent"
+        },
+        "application": {
+          "name": "Corpus Application",
+          "primary_color": "#0d3a78",
+          "logo_url": null
+        },
+        "purposes": [
+          {
+            "name": "data_sharing",
+            "label": "Share your profile data",
+            "description": "A test consent purpose",
+            "mechanism": "explicit",
+            "legal_basis": "consent",
+            "required": false,
+            "data_labels": [
+              "Identity"
+            ]
+          }
+        ],
+        "fields": [],
+        "steps": [
+          {
+            "key": "authenticate",
+            "title": "Sign In"
+          },
+          {
+            "key": "identity",
+            "title": "Confirm Your Identity"
+          },
+          {
+            "key": "review",
+            "title": "Review & Authorize"
+          }
+        ],
+        "presentation": {
+          "button_mode": "sign_in",
+          "display_label": "Corpus Application"
+        },
+        "outcomes": [
+          "granted",
+          "denied"
+        ],
+        "expiry": {
+          "consent_duration_days": null
+        },
+        "locale": {
+          "requested": "default",
+          "resolved": "en",
+          "fallback": "en"
+        },
+        "revision": "<OPAQUE>"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

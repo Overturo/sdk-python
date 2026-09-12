@@ -1,0 +1,17 @@
+{
+  "content": {
+    "agent_type": "autonomous",
+    "name": "Corpus Agent",
+    "delegated_scopes": [
+      "profile"
+    ],
+    "capabilities": [
+      "summarize_meetings"
+    ],
+    "operator_name": "Corpus Operator",
+    "privacy_policy_url": "https://corpus.example/privacy",
+    "data_storage": "ephemeral",
+    "retention_period": "P30D"
+  },
+  "content_hash": "sha256:81d97e6597dc19ff6235c3ead83fd7c80cb22e39fda9adf95620417b9d3a6fd4"
+}

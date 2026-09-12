@@ -1,0 +1,36 @@
+{
+  "operationId": "Connections_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/connections/<PREFIX_ID:1>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "connection": {
+        "id": "<PREFIX_ID:1>",
+        "application_id": "<PREFIX_ID:2>",
+        "application_name": "Corpus Application",
+        "status": "connected",
+        "trust_tier": null,
+        "connected_at": "2026-01-01T00:00:00Z",
+        "last_active_at": null,
+        "active_policies": [],
+        "suspensions": [],
+        "disconnected_at": null,
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}

@@ -1,0 +1,50 @@
+{
+  "operationId": "Accounts_index",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/accounts",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": [
+      {
+        "id": "<PREFIX_ID:1>",
+        "name": "Corpus Owner",
+        "personal": true,
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-01-01T00:00:00Z",
+        "owner_id": "<PREFIX_ID:2>",
+        "account_users": [
+          {
+            "id": "<PREFIX_ID:3>",
+            "user_id": "<PREFIX_ID:2>"
+          }
+        ]
+      },
+      {
+        "id": "<PREFIX_ID:4>",
+        "name": "Corpus Account",
+        "personal": false,
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-01-01T00:00:00Z",
+        "owner_id": "<PREFIX_ID:2>",
+        "account_users": [
+          {
+            "id": "<PREFIX_ID:5>",
+            "user_id": "<PREFIX_ID:2>"
+          }
+        ]
+      }
+    ]
+  },
+  "document": "37b0741e6c871f4e"
+}

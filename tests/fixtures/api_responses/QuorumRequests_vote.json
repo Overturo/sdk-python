@@ -1,0 +1,49 @@
+{
+  "operationId": "QuorumRequests_vote",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/quorum_requests/<PREFIX_ID:1>/vote",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "vote": "approve",
+      "comment": "corpus"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "vote": {
+        "id": "<PREFIX_ID:2>",
+        "delegate_id": "<PREFIX_ID:3>",
+        "vote": "approve",
+        "comment": "corpus",
+        "voted_at": "2026-01-01T00:00:00Z"
+      },
+      "quorum_request": {
+        "id": "<PREFIX_ID:1>",
+        "initiator_id": "<PREFIX_ID:3>",
+        "status": "voting",
+        "action_type": "fund_release",
+        "action_payload": {
+          "amount": 10000
+        },
+        "justification": null,
+        "required_approvals": 2,
+        "approval_count": 1,
+        "denial_count": 0,
+        "deadline_at": "2026-01-01T00:00:00Z",
+        "resolved_at": null,
+        "created_at": "2026-01-01T00:00:00Z",
+        "agreement_id": "<PREFIX_ID:4>"
+      }
+    }
+  },
+  "document": "37b0741e6c871f4e"
+}
