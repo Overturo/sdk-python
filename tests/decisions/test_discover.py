@@ -53,7 +53,7 @@ def test_discover_decodes_the_shared_fixture() -> None:
     assert result["locale"]["fallback"] == "en"
     purpose = next(p for p in result["purposes"] if p["name"] == "care_reminders")
     assert purpose["mechanism"] == "opt_out"
-    assert purpose["legal_basis"] == "consent"
+    assert purpose["legal_basis"] == "legitimate_interest"
     assert isinstance(purpose["data_labels"], list)
     assert "principal" in [f["completed_by"] for f in result["fields"]]
     assert result["outcomes"] == ["granted", "denied"]

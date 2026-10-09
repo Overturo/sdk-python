@@ -29,7 +29,7 @@
         "label": "Care reminders",
         "description": "Send you reminders about upcoming care.",
         "mechanism": "opt_out",
-        "legal_basis": "consent",
+        "legal_basis": "legitimate_interest",
         "required": false,
         "data_labels": [
           "Identity"
@@ -91,7 +91,7 @@
       },
       {
         "key": "opt_out",
-        "title": "Consent Choices"
+        "title": "Your Choices"
       },
       {
         "key": "review",

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3 (2026-10-09)
+### Changed
+- Vendored discovery corpus refreshed to the shared corpus 1.0.3: the canonical flow's `care_reminders` purpose now runs on legitimate interest with the opt-out (right to object) mechanism, and its choices step is titled "Your Choices"; the discovery test follows. Tests only — the published package is unchanged.
+
 ## 1.0.2 (2026-10-09)
 ### Changed
 - Vendored signed-record corpus refreshed to the shared corpus 1.0.2: a new `consent_record_escaped_text` case (receipt text containing `<`, `>`, `&` and U+2028), regenerated record identifiers and the `overturo-cr/2.9` schema label; published keys unchanged. Tests only — the published package is unchanged.
