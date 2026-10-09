@@ -2,7 +2,7 @@
   "receipt": {
     "event": [
       {
-        "entity_id": "oauth_app_dev_a4qW8ENrx7nyl85DF199JoLP215RjAYm",
+        "entity_id": "oauth_app_dev_6xXj84a91YKArl1basrJNQngBoM0PwED",
         "event_time": "2026-08-01T12:00:00Z",
         "event_type": "regular",
         "event_state": "notice shown"
@@ -10,10 +10,10 @@
     ],
     "record": {
       "anonymous": true,
-      "record_id": "ctx_dev_gKqJR7NOkMZev0RNij0PBox9EyAzaQ4w",
+      "record_id": "ctx_dev_bJ2K34gkxneYp8XYVt0vzaqPXrD5W0LN",
       "conforms_to": "ISO/IEC TS 27560:2023",
       "record_type": "notice_record",
-      "schema_version": "overturo-cr/2.8"
+      "schema_version": "overturo-cr/2.9"
     },
     "extensions": {
       "scopes": [
@@ -22,17 +22,17 @@
       ],
       "sensitive": false,
       "delivery_mode": "redirect",
-      "consent_flow_id": "flw_dev_jm9GY7oVn38XDenYTl54bLJQAWrveKBk",
+      "consent_flow_id": "flw_dev_zGEN6qowB91ZdM5OWHWbk50xVr8jnOeg",
       "agent_disclosures": [
         {
-          "agent": "agent_dev_8PogVGy6Kr4LOkoDsrYOxDWQ5RMY0le1",
+          "agent": "agent_dev_pjRMkEa7DWXNGOJ0rT3wYzBm3vPLV8qo",
           "disclosed_at": "2026-08-01T10:00:00Z",
           "capability_manifest": {
             "hash": "sha256:bdbbc52778cd6fc70e935e9c5f93de35580ba1ecb559a23357b6e38ce48e258d",
-            "reference": "agent_dev_8PogVGy6Kr4LOkoDsrYOxDWQ5RMY0le1/manifest/v1"
+            "reference": "agent_dev_pjRMkEa7DWXNGOJ0rT3wYzBm3vPLV8qo/manifest/v1"
           },
           "delivery_provenance": "declared",
-          "accountability_record": "https://overturo.com/.well-known/transparency/agents/agent_dev_8PogVGy6Kr4LOkoDsrYOxDWQ5RMY0le1"
+          "accountability_record": "https://overturo.com/.well-known/transparency/agents/agent_dev_pjRMkEa7DWXNGOJ0rT3wYzBm3vPLV8qo"
         }
       ],
       "collection_mechanism": "documented"
@@ -63,7 +63,7 @@
       "privacy_notice": {
         "url": "https://corpus.example/privacy",
         "hash": "sha256:0eaa45bf6ef55ccb5c868f8c7b556668301b400c462dfb63696b4fa219a3b3f3",
-        "reference": "flw_dev_jm9GY7oVn38XDenYTl54bLJQAWrveKBk/notice/v1"
+        "reference": "flw_dev_zGEN6qowB91ZdM5OWHWbk50xVr8jnOeg/notice/v1"
       },
       "privacy_rights": [
         "https://overturo.com/consent-access"
@@ -79,7 +79,7 @@
     },
     "party_identification": [
       {
-        "party_id": "oauth_app_dev_a4qW8ENrx7nyl85DF199JoLP215RjAYm",
+        "party_id": "oauth_app_dev_6xXj84a91YKArl1basrJNQngBoM0PwED",
         "party_name": "Corpus App",
         "party_role": "controller",
         "provenance": "display_name"
@@ -96,7 +96,7 @@
     "canonicalization": "overturo-jcs-1",
     "region": "us",
     "key_version": "us-1",
-    "value": "nNDu+bjEO6LfySQr9iagvMjHHiAXZ0QKS1G82V3nxI8iiti0crWlIFSGLvra2/77j+TeYDPkP4KaxWsa1UR5Bw==",
+    "value": "uI3tISwReFvYu3Hqs+0S4dSnENtIu44F8xIy6TlGlQrInVrpcsb9J3aSDMQDowT2U1tDGKWvcPMSvW49+Ox3BQ==",
     "public_key": "89tpau2cCQo5wIc20CXNlfSAe3W6Yb51dfQ/dxC229s=",
     "key_discovery": "https://overturo.com/.well-known/witness-configuration",
     "signed_at": "2026-08-01T12:00:00Z"

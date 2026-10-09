@@ -19,6 +19,12 @@
       "key_version": "us-1"
     },
     {
+      "fixture": "consent_record_escaped_text.json",
+      "expect": "valid",
+      "record_type": "consent_record",
+      "key_version": "us-1"
+    },
+    {
       "fixture": "notice_record_valid.json",
       "expect": "valid",
       "record_type": "notice_record",
