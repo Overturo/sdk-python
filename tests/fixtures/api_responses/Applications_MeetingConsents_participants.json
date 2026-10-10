@@ -1,0 +1,54 @@
+{
+  "operationId": "Applications_MeetingConsents_participants",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/applications/<PREFIX_ID:1>/meeting_consents/<PREFIX_ID:2>/participants",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "participants": [
+        {
+          "id": "<PREFIX_ID:3>",
+          "status": "consented",
+          "source": "booking",
+          "name": "Corpus Participant",
+          "email": "corpus@example.com",
+          "decisions": {
+            "ai_transcription": "declined",
+            "meeting_recording": "granted"
+          },
+          "decided_at": "2026-01-01T00:00:00Z",
+          "withdrawn_at": null
+        },
+        {
+          "id": "<PREFIX_ID:4>",
+          "status": "declined",
+          "source": "booking",
+          "name": "Corpus Declined",
+          "email": "corpus@example.com",
+          "decisions": {},
+          "decided_at": "2026-01-01T00:00:00Z",
+          "withdrawn_at": null
+        }
+      ],
+      "total": 1,
+      "counts": {
+        "total": 2,
+        "decided": 2,
+        "undecided": 0,
+        "consented": 1
+      }
+    }
+  },
+  "document": "9d331bdb066a5a5e"
+}

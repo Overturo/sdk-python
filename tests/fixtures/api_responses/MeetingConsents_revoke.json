@@ -1,0 +1,44 @@
+{
+  "operationId": "MeetingConsents_revoke",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/meeting_consents/<PREFIX_ID:1>/revoke",
+    "headers": {
+      "X-Publishable-Key": "pk_test_corpus",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "session_token": "<TOKEN>"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "meeting_consent_id": "<PREFIX_ID:1>",
+      "status": "revoked",
+      "consented_at": null,
+      "revoked_at": "2026-01-01T00:00:00Z",
+      "purposes": {
+        "ai_transcription": "false",
+        "meeting_recording": "true"
+      },
+      "decisions": {
+        "ai_transcription": "declined",
+        "meeting_recording": "withdrawn"
+      },
+      "meeting": {
+        "id": "<PREFIX_ID:1>",
+        "title": "Corpus Review (moved)",
+        "scheduled_at": "2026-01-01T00:00:00Z",
+        "ends_at": "2026-01-01T00:00:00Z",
+        "platform": "zoom",
+        "cancelled_at": null
+      }
+    }
+  },
+  "document": "9d331bdb066a5a5e"
+}

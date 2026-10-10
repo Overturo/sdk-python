@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0 (2026-10-10)
+### Added
+- `overturo.meetings` — the organisation's side of meeting consent (API token): `list_meetings`, `create_meeting`, `retrieve_meeting`, `update_meeting` (rename / reschedule), `cancel_meeting`, `list_participants` (each person's decision per purpose), each with an `_async` twin. A meeting is the unit of record: window, platform identity, cancellation, participant rows. Tests run against the recorded corpus; the module joins the strict mypy surface.
+
 ## 1.0.3 (2026-10-09)
 ### Changed
 - Vendored discovery corpus refreshed to the shared corpus 1.0.3: the canonical flow's `care_reminders` purpose now runs on legitimate interest with the opt-out (right to object) mechanism, and its choices step is titled "Your Choices"; the discovery test follows. Tests only — the published package is unchanged.

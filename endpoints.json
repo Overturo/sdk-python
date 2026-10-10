@@ -14,6 +14,12 @@
     { "method": "GET", "path": "/api/v1/decisions/{session_token}" },
     { "method": "GET", "path": "/api/v1/decisions/by-escalation/{escalation_prefix_id}/wait" },
     { "method": "GET", "path": "/api/v1/decisions/flows/{flow_id}/disclosures" },
+    { "method": "GET", "path": "/api/v1/applications/{application_id}/meeting_consents" },
+    { "method": "POST", "path": "/api/v1/applications/{application_id}/meeting_consents" },
+    { "method": "GET", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}" },
+    { "method": "PATCH", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}" },
+    { "method": "DELETE", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}" },
+    { "method": "GET", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}/participants" },
     { "method": "GET", "path": "/.well-known/openid-configuration", "contract": false }
   ]
 }

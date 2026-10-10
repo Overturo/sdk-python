@@ -1,0 +1,45 @@
+{
+  "operationId": "MeetingConsents_status",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/meeting_consents/<PREFIX_ID:1>/status",
+    "query": {
+      "session_token": "<TOKEN>"
+    },
+    "headers": {
+      "X-Publishable-Key": "pk_test_corpus",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "meeting_consent_id": "<PREFIX_ID:1>",
+      "status": "fulfilled",
+      "consented_at": "2026-01-01T00:00:00Z",
+      "revoked_at": null,
+      "purposes": {
+        "ai_transcription": "false",
+        "meeting_recording": "true"
+      },
+      "decisions": {
+        "ai_transcription": "declined",
+        "meeting_recording": "granted"
+      },
+      "meeting": {
+        "id": "<PREFIX_ID:1>",
+        "title": "Corpus Review (moved)",
+        "scheduled_at": "2026-01-01T00:00:00Z",
+        "ends_at": "2026-01-01T00:00:00Z",
+        "platform": "zoom",
+        "cancelled_at": null
+      }
+    }
+  },
+  "document": "9d331bdb066a5a5e"
+}

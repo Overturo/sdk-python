@@ -1,0 +1,53 @@
+{
+  "operationId": "Applications_MeetingConsents_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/applications/<PREFIX_ID:1>/meeting_consents",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "title": "Corpus Review",
+      "scheduled_at": "2026-01-01T00:00:00Z",
+      "duration_minutes": 45,
+      "platform": "zoom",
+      "external_meeting_id": "9876543210"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "meeting_consent": {
+        "id": "<PREFIX_ID:2>",
+        "application_id": "<PREFIX_ID:1>",
+        "name": "Corpus Review",
+        "description": "Basic recording and sharing consent for meetings",
+        "status": "checked_in",
+        "cancelled_at": null,
+        "platform": "zoom",
+        "external_meeting_id": "9876543210",
+        "scheduled_at": "2026-01-01T00:00:00Z",
+        "ends_at": "2026-01-01T00:00:00Z",
+        "template": "standard-meeting",
+        "consent_link": "https://example.com/URL_PLACEHOLDER",
+        "consented_count": 0,
+        "participants": {
+          "total": 0,
+          "decided": 0,
+          "undecided": 0,
+          "consented": 0
+        },
+        "created_at": "2026-01-01T00:00:00Z",
+        "updated_at": "2026-01-01T00:00:00Z"
+      },
+      "consent_link": "https://example.com/URL_PLACEHOLDER",
+      "consented_count": 0
+    }
+  },
+  "document": "9d331bdb066a5a5e"
+}

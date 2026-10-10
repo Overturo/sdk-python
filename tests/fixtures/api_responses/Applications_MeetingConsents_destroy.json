@@ -1,0 +1,19 @@
+{
+  "operationId": "Applications_MeetingConsents_destroy",
+  "request": {
+    "method": "DELETE",
+    "path": "/api/v1/applications/<PREFIX_ID:1>/meeting_consents/<PREFIX_ID:2>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 204,
+    "headers": {},
+    "body": null
+  },
+  "document": "9d331bdb066a5a5e"
+}

@@ -10,9 +10,9 @@ exposes the authorize-side public symbols plus the cross-cutting
 errors / models / verify so the relocated tests pass.
 """
 
-__version__ = "1.0.3"
+__version__ = "1.1.0"
 
-from . import decisions, receipts
+from . import decisions, meetings, receipts
 from .authorize import (
     DpopKeyPair,
     OverturoAuthorize,
@@ -169,6 +169,7 @@ __all__ = [
     "decisions",
     "evidence_digest",
     "manifest_content_hash",
+    "meetings",
     "is_oap_error",
     "jwk_thumbprint",
     "parse_decision",
