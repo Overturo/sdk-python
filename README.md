@@ -1,5 +1,5 @@
 > **Release mirror.** This repository is a read-only snapshot of
-> `overturo` 1.1.0, published from Overturo's main
+> `overturo` 1.2.0, published from Overturo's main
 > development repository. Issues and pull requests are welcome here; accepted
 > changes are ported upstream and appear in the next release snapshot.
 > Security reports: see [SECURITY.md](./SECURITY.md).
@@ -26,6 +26,7 @@ Subpackages:
 - `overturo.oversight` — Issuer / attester SDK (Oversight Mode)
 - `overturo.decisions` — Needs-approval URL minting + long-poll subscription
 - `overturo.receipts` — Authority record client methods (durable Authorization Receipts + disclosure mint)
+- `overturo.consent_records` — Consent records captured outside Overturo's surfaces (create, commit a capture, read, import, status)
 
 ## Authority records
 
@@ -50,6 +51,40 @@ The durable **Authorization Receipt** is a different artifact from the short-liv
     )
 
 Typed refusals raise `OverturoValidationError` carrying the machine code in `reason_code` (`unknown_flavor`, `not_signable`, `dpv_unavailable`; `agent_not_disclosed`, `invalid_disclosed_at`, `purposes_missing`). The 404 contract is parity-preserving: unknown, foreign, and non-authority ids are indistinguishable. An authorization-kind record is refused by the consent-receipts read with a typed hint — authority records are served only by these endpoints. Field semantics and verification: the Receipt Interop & Verification guide in the developer documentation.
+
+## Consent records
+
+Consents captured outside Overturo's surfaces — in your own form, or already held in your systems — become records with the same receipt, status and evidence as a decision taken on an Overturo surface.
+
+    from overturo import consent_records
+
+    # Capture and commit in one call — idempotent on your key.
+    envelope = consent_records.create_record(
+        base_url="https://overturo.us", api_token=token,
+        flow_id="flw_...", subject={"email": "ana@example.com", "external_id": "crm-1842"},
+        decisions={"marketing_email": {"decision": "granted"}, "analytics": {"decision": "declined"}},
+        idempotency_key="signup-1842",
+    )
+
+    # Commit the capture token your own form received (the form-capture path of @overturo/js).
+    decision = consent_records.commit_capture(
+        base_url="https://overturo.us", api_token=token, token=capture_token, subject={"email": "ana@example.com"},
+    )
+
+    # Import consents you already hold — up to 5000 rows per batch; dry_run reports without writing.
+    batch = consent_records.import_records(
+        base_url="https://overturo.us", api_token=token, flow_id="flw_...", records=rows, dry_run=True,
+    )
+    progress = consent_records.retrieve_import(
+        base_url="https://overturo.us", api_token=token, import_id=batch["import"]["id"]
+    )
+
+    # The per-purpose status for a subject, by email or your own identifier.
+    status = consent_records.status(
+        base_url="https://overturo.us", api_token=token, application_id="app_...", email="ana@example.com"
+    )
+
+Every read and write except `commit_capture` has an `_async` twin.
 
 ## Contract and testing
 

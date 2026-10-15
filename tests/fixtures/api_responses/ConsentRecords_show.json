@@ -1,0 +1,43 @@
+{
+  "operationId": "ConsentRecords_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/consent_records/<PREFIX_ID:1>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "consent_record": {
+        "id": "<PREFIX_ID:1>",
+        "status": "fulfilled",
+        "flow_id": "<PREFIX_ID:2>",
+        "channel": "controller_attested",
+        "purposes": [
+          {
+            "key": "marketing",
+            "outcome": "granted",
+            "basis": "consent"
+          }
+        ],
+        "receipt_id": "<PREFIX_ID:1>",
+        "subject": {
+          "email": "corpus@example.com",
+          "external_id": "crm-1"
+        },
+        "captured_at": "2026-01-01T00:00:00Z",
+        "recorded_at": "2026-01-01T00:00:00Z",
+        "expires_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  },
+  "document": "99dacb3771716c5b"
+}

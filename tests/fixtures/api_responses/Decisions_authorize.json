@@ -1,0 +1,35 @@
+{
+  "operationId": "Decisions_authorize",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/decisions/<TOKEN>/authorize",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "subject": {
+        "email": "corpus@example.com",
+        "external_id": "crm-capture"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "decision": {
+        "status": "fulfilled",
+        "consent_token": "<TOKEN>",
+        "consent_token_expires_at": "2026-01-01T00:00:00Z",
+        "record_id": "<PREFIX_ID:1>",
+        "receipt_id": "<PREFIX_ID:1>",
+        "channel": "form_capture"
+      }
+    }
+  },
+  "document": "99dacb3771716c5b"
+}

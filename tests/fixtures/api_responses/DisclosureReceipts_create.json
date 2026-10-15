@@ -24,7 +24,7 @@
         "record_id": "<PREFIX_ID:3>",
         "record": {
           "record": {
-            "schema_version": "overturo-cr/2.9",
+            "schema_version": "overturo-cr/2.12",
             "conforms_to": "ISO/IEC TS 27560:2023",
             "record_id": "<PREFIX_ID:3>",
             "record_type": "notice_record",
@@ -109,11 +109,12 @@
                 "delivery_provenance": "declared",
                 "disclosed_at": "2026-01-01T00:00:00Z"
               }
-            ]
+            ],
+            "collection_channel": "hosted"
           }
         }
       }
     }
   },
-  "document": "9d331bdb066a5a5e"
+  "document": "99dacb3771716c5b"
 }

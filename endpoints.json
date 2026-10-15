@@ -3,11 +3,16 @@
   "endpoints": [
     { "method": "POST", "path": "/api/v1/grants/{id}/authorize" },
     { "method": "POST", "path": "/api/v1/grants/{id}/token" },
-    { "method": "GET", "path": "/api/v1/oap/chronicles", "unpublished": "internal_name" },
-    { "method": "POST", "path": "/api/v1/oap/attestations", "discovered": "oversight_attestation_endpoint" },
-    { "method": "POST", "path": "/api/v1/oap/attestations/heartbeat", "discovered": "oversight_attestation_heartbeat_endpoint" },
-    { "method": "POST", "path": "/api/v1/oap/escalations", "discovered": "oversight_escalation_endpoint" },
-    { "method": "POST", "path": "/api/v1/oap/revocations", "discovered": "oversight_revocation_endpoint" },
+    { "method": "GET", "path": "/api/v1/oap/chronicles",
+      "unpublished": "internal_name" },
+    { "method": "POST", "path": "/api/v1/oap/attestations",
+      "discovered": "oversight_attestation_endpoint" },
+    { "method": "POST", "path": "/api/v1/oap/attestations/heartbeat",
+      "discovered": "oversight_attestation_heartbeat_endpoint" },
+    { "method": "POST", "path": "/api/v1/oap/escalations",
+      "discovered": "oversight_escalation_endpoint" },
+    { "method": "POST", "path": "/api/v1/oap/revocations",
+      "discovered": "oversight_revocation_endpoint" },
     { "method": "GET", "path": "/api/v1/authorization_receipts/{id}" },
     { "method": "POST", "path": "/api/v1/disclosure_receipts" },
     { "method": "POST", "path": "/api/v1/decisions" },
@@ -20,6 +25,14 @@
     { "method": "PATCH", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}" },
     { "method": "DELETE", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}" },
     { "method": "GET", "path": "/api/v1/applications/{application_id}/meeting_consents/{id}/participants" },
-    { "method": "GET", "path": "/.well-known/openid-configuration", "contract": false }
+    { "method": "GET", "path": "/.well-known/openid-configuration",
+      "contract": false
+    },
+    { "method": "POST", "path": "/api/v1/decisions/{id}/authorize" },
+    { "method": "POST", "path": "/api/v1/consent_records" },
+    { "method": "GET", "path": "/api/v1/consent_records/{id}" },
+    { "method": "POST", "path": "/api/v1/consent_records/imports" },
+    { "method": "GET", "path": "/api/v1/consent_records/imports/{import_id}" },
+    { "method": "GET", "path": "/api/v1/applications/{application_id}/consent_status" }
   ]
 }

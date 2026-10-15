@@ -1,0 +1,41 @@
+{
+  "operationId": "Decisions_Captures_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/decisions/capture",
+    "headers": {
+      "X-Publishable-Key": "pk_test_corpus",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "flow_id": "<PREFIX_ID:1>",
+      "decisions": {
+        "marketing": {
+          "decision": "granted",
+          "default_checked": false,
+          "mandatory": false
+        }
+      },
+      "subject": {
+        "email": "corpus@example.com"
+      },
+      "snapshot": "<form><label>Marketing <input type=\"checkbox\"></label></form>",
+      "page_url": "https://forms.example.com/signup"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "capture": {
+        "session_token": "<TOKEN>",
+        "attestation_id": "<PREFIX_ID:2>",
+        "committed": false
+      }
+    }
+  },
+  "document": "99dacb3771716c5b"
+}

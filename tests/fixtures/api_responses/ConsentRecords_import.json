@@ -1,0 +1,34 @@
+{
+  "operationId": "ConsentRecords_import",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/consent_records/imports/<PREFIX_ID:1>",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "import": {
+        "id": "<PREFIX_ID:1>",
+        "status": "pending",
+        "dry_run": true,
+        "row_count": 1,
+        "accepted_count": 0,
+        "refused_count": 0,
+        "results": [],
+        "error": null,
+        "started_at": null,
+        "finished_at": null
+      }
+    }
+  },
+  "document": "99dacb3771716c5b"
+}

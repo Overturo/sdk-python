@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.2.0 (2026-10-15)
+### Added
+- `overturo.consent_records` — consents captured outside Overturo's surfaces (API token): `create_record` (capture and commit in one call, idempotent on your key), `commit_capture` (commit the capture token your own form received), `retrieve_record`, `import_records` (consents you already hold, up to 5000 rows per batch, with a dry run), `retrieve_import` and `status` (the per-purpose status for a subject, by email or your own identifier), each with an `_async` twin except `commit_capture`. Tests run against the recorded corpus.
+### Changed
+- Vendored corpus refreshed to the shared corpus 1.0.5 and the signed-record fixtures regenerated against schema `overturo-cr/2.12`; published keys unchanged.
+
 ## 1.1.0 (2026-10-10)
 ### Added
 - `overturo.meetings` — the organisation's side of meeting consent (API token): `list_meetings`, `create_meeting`, `retrieve_meeting`, `update_meeting` (rename / reschedule), `cancel_meeting`, `list_participants` (each person's decision per purpose), each with an `_async` twin. A meeting is the unit of record: window, platform identity, cancellation, participant rows. Tests run against the recorded corpus; the module joins the strict mypy surface.

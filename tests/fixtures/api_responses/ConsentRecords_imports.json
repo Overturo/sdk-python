@@ -1,0 +1,52 @@
+{
+  "operationId": "ConsentRecords_imports",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/consent_records/imports",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "body": {
+      "flow_id": "<PREFIX_ID:1>",
+      "dry_run": true,
+      "records": [
+        {
+          "subject": {
+            "email": "corpus@example.com"
+          },
+          "decisions": {
+            "marketing": {
+              "decision": "granted",
+              "default_checked": false,
+              "mandatory": false
+            }
+          },
+          "captured_at": "2026-01-01T00:00:00Z"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 202,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "import": {
+        "id": "<PREFIX_ID:2>",
+        "status": "pending",
+        "dry_run": true,
+        "row_count": 1,
+        "accepted_count": 0,
+        "refused_count": 0,
+        "results": [],
+        "error": null,
+        "started_at": null,
+        "finished_at": null
+      }
+    }
+  },
+  "document": "99dacb3771716c5b"
+}
