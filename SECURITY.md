@@ -2,7 +2,7 @@
 
 ## Supported version
 
-The latest release snapshot in this repository (1.2.0) is supported.
+The latest release snapshot in this repository (2.0.0) is supported.
 Older snapshots receive no fixes; upgrade to the latest release.
 
 ## Reporting a vulnerability

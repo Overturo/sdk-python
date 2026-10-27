@@ -39,7 +39,7 @@
           "record_id": "<PREFIX_ID:1>",
           "conforms_to": "ISO/IEC TS 27560:2023",
           "record_type": "authorization_record",
-          "schema_version": "overturo-cr/2.12",
+          "schema_version": "overturo-cr/2.14",
           "pii_principal_id": "<PREFIX_ID:2>"
         },
         "authority": {
@@ -154,5 +154,5 @@
       }
     }
   },
-  "document": "99dacb3771716c5b"
+  "document": "933a97174969ed70"
 }

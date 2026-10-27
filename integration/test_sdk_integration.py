@@ -87,7 +87,7 @@ def test_authorize_round_trip_against_live_server(fixture):
     )
     assert result["decision"] == "allow"
     assert result["receipt"].count(".") == 2
-    assert result["chronicle_id"].startswith("audit_rec_")
+    assert result["record_id"].startswith("audit_rec_")
 
 
 def test_receipts_verify_offline_against_live_jwks(fixture, jwks):

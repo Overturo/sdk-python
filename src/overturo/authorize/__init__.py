@@ -8,7 +8,6 @@ JwksKey, etc.) live in `overturo.models`; errors in
 """
 
 from .adapter import OverturoDecisionAdapter
-from .chronicle_stream import OverturoChronicleStream
 from .client import OverturoAuthorize
 from .dpop import (
     DpopKeyPair,
@@ -17,11 +16,12 @@ from .dpop import (
     sign_dpop_proof,
 )
 from .receipt import peek_receipt
+from .record_stream import OverturoRecordStream
 
 __all__ = [
     "OverturoAuthorize",
     "OverturoDecisionAdapter",
-    "OverturoChronicleStream",
+    "OverturoRecordStream",
     "DpopKeyPair",
     "access_token_hash",
     "jwk_thumbprint",

@@ -39,7 +39,7 @@ async def client_and_router():
         client = await OverturoOversight.create(
             base_url=BASE,
             token="tat_dev_xxx",
-            touchpoint_id="tp_dev_yyy",
+            application_id="tp_dev_yyy",
             heartbeat_enabled=False,
         )
         yield client, router

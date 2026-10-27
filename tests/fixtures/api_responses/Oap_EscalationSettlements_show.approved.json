@@ -1,0 +1,38 @@
+{
+  "operationId": "Oap_EscalationSettlements_show",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/grants/<PREFIX_ID:1>/escalations/<PREFIX_ID:2>/wait",
+    "query": {
+      "hold": "1"
+    },
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+    },
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "status": "approved",
+      "wait_again": false,
+      "escalation_id": "<PREFIX_ID:2>",
+      "decision_record_id": "<PREFIX_ID:3>",
+      "decided_by": "principal",
+      "oap_ver": "1.0",
+      "decision": "allow",
+      "receipt": "<TOKEN>",
+      "receipt_jti": "corpus-nonce-75.00",
+      "iat": 1735689600,
+      "exp": 1735689660,
+      "record_id": "<PREFIX_ID:3>",
+      "iss": "https://overturo.com"
+    }
+  },
+  "document": "933a97174969ed70"
+}

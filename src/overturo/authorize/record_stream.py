@@ -1,13 +1,13 @@
-"""Chronicle stream iterator.
+"""Record stream iterator (the audit-trail entries of a grant).
 
 Polls ``GET /api/v1/oap/chronicles`` and yields raw chronicle entries.
 Manages cursor advancement and exponential idle back-off.
 
 Usage::
 
-    from overturo import OverturoAuthorize, OverturoChronicleStream
+    from overturo import OverturoAuthorize, OverturoRecordStream
 
-    stream = OverturoChronicleStream(client, event_type_prefix="conductor.")
+    stream = OverturoRecordStream(client, event_type_prefix="conductor.")
     for event in stream:
         handle(event)
 """
@@ -18,13 +18,13 @@ import time
 from collections.abc import Callable, Iterator
 from typing import Any
 
-__all__ = ["OverturoChronicleStream"]
+__all__ = ["OverturoRecordStream"]
 
 
 _ALLOWED_PREFIXES = frozenset({"conductor.", "oap."})
 
 
-class OverturoChronicleStream:
+class OverturoRecordStream:
     DEFAULT_POLL = 5.0
     DEFAULT_BACKOFF_MAX = 30.0
 

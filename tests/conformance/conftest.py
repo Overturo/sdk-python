@@ -17,21 +17,21 @@ import pytest
 class ConformanceEnv:
     base_url: str
     token: str
-    touchpoint_id: str
+    application_id: str
 
 
 @pytest.fixture
 def env() -> ConformanceEnv:
     base_url = os.environ.get("OVERTURO_BASE_URL")
     token = os.environ.get("OVERTURO_ATTESTER_TOKEN")
-    touchpoint_id = os.environ.get("OVERTURO_TOUCHPOINT_ID")
-    if not (base_url and token and touchpoint_id):
+    application_id = os.environ.get("OVERTURO_APPLICATION_ID")
+    if not (base_url and token and application_id):
         pytest.skip(
             "conformance harness requires OVERTURO_BASE_URL + "
-            "OVERTURO_ATTESTER_TOKEN + OVERTURO_TOUCHPOINT_ID env vars; "
+            "OVERTURO_ATTESTER_TOKEN + OVERTURO_APPLICATION_ID env vars; "
             "see README.md"
         )
-    return ConformanceEnv(base_url=base_url, token=token, touchpoint_id=touchpoint_id)
+    return ConformanceEnv(base_url=base_url, token=token, application_id=application_id)
 
 
 def is_offline() -> bool:

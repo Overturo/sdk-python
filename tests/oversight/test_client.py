@@ -39,7 +39,7 @@ async def client_no_heartbeat():
         client = await OverturoOversight.create(
             base_url=BASE,
             token="tat_dev_xxx",
-            touchpoint_id="tp_dev_yyy",
+            application_id="tp_dev_yyy",
             heartbeat_enabled=False,
         )
         yield client, mock_router
@@ -53,7 +53,7 @@ async def client_no_heartbeat():
 async def test_create_requires_base_url():
     with pytest.raises(OverturoConfigError):
         await OverturoOversight.create(
-            base_url="", token="t", touchpoint_id="tp", heartbeat_enabled=False
+            base_url="", token="t", application_id="tp", heartbeat_enabled=False
         )
 
 
@@ -61,15 +61,15 @@ async def test_create_requires_base_url():
 async def test_create_requires_token():
     with pytest.raises(OverturoConfigError):
         await OverturoOversight.create(
-            base_url=BASE, token="", touchpoint_id="tp", heartbeat_enabled=False
+            base_url=BASE, token="", application_id="tp", heartbeat_enabled=False
         )
 
 
 @pytest.mark.asyncio
-async def test_create_requires_touchpoint_id():
+async def test_create_requires_application_id():
     with pytest.raises(OverturoConfigError):
         await OverturoOversight.create(
-            base_url=BASE, token="t", touchpoint_id="", heartbeat_enabled=False
+            base_url=BASE, token="t", application_id="", heartbeat_enabled=False
         )
 
 
@@ -79,7 +79,7 @@ async def test_create_rejects_non_http_base_url():
         await OverturoOversight.create(
             base_url="file:///etc",
             token="t",
-            touchpoint_id="tp",
+            application_id="tp",
             heartbeat_enabled=False,
         )
 
@@ -121,7 +121,7 @@ async def test_attest_posts_body_and_returns_parsed_result(client_no_heartbeat):
     assert request_body["action_class"] == "mcp_tool_call"
     assert request_body["decision"] == "allow"
     assert request_body["legal_basis"] == "consent"
-    assert request_body["touchpoint_id"] == "tp_dev_yyy"
+    assert request_body["application_id"] == "tp_dev_yyy"
     assert request_body["sequence_number"] == 1
 
 
@@ -149,7 +149,7 @@ async def test_attest_invokes_on_sequence_update():
         client = await OverturoOversight.create(
             base_url=BASE,
             token="tat_dev_xxx",
-            touchpoint_id="tp_dev_yyy",
+            application_id="tp_dev_yyy",
             heartbeat_enabled=False,
             start_sequence=5,
             on_sequence_update=on_update,

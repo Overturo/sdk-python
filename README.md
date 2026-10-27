@@ -1,10 +1,10 @@
 > **Release mirror.** This repository is a read-only snapshot of
-> `overturo` 1.2.0, published from Overturo's main
+> `overturo-sdk` 2.0.0, published from Overturo's main
 > development repository. Issues and pull requests are welcome here; accepted
 > changes are ported upstream and appear in the next release snapshot.
 > Security reports: see [SECURITY.md](./SECURITY.md).
 
-# overturo
+# overturo-sdk
 
 **Documentation:** <https://overturo.com/developers/docs> · **Agent authorization:** <https://overturo.com/developers/agent-authorization> · **API reference:** <https://overturo.com/developers/openapi>
 
@@ -12,7 +12,9 @@ Python SDK for [Overturo](https://overturo.com) — the trust conductor.
 
 ## Install
 
-    pip install overturo
+    pip install overturo-sdk
+
+The distribution is `overturo-sdk`; the import is `overturo`.
 
 ## Quickstart
 

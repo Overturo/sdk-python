@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.0.0 (2026-10-26)
+### Changed — public names, before the first registry publish
+- The audit-record pointer is `record_id` everywhere (`OverturoDecision.record_id`, the receipt claim, the audit-trail entries); `chronicle_id` is gone from the wire and the models — nothing is dual-emitted.
+- `overturo.oversight` takes `application_id` (was `touchpoint_id`) and sends it on the attestation, escalation and revocation requests.
+- `OverturoRecordStream` (module `overturo.authorize.record_stream`) replaces `OverturoChronicleStream`.
+### Changed
+- Vendored corpus refreshed: `Oap_Authorize_create` (allow and `.escalate`) and `Oap_EscalationSettlements_show` (pending and `.approved`) join; the OAP recordings carry `record_id`.
+
 ## 1.2.0 (2026-10-15)
 ### Added
 - `overturo.consent_records` — consents captured outside Overturo's surfaces (API token): `create_record` (capture and commit in one call, idempotent on your key), `commit_capture` (commit the capture token your own form received), `retrieve_record`, `import_records` (consents you already hold, up to 5000 rows per batch, with a dry run), `retrieve_import` and `status` (the per-purpose status for a subject, by email or your own identifier), each with an `_async` twin except `commit_capture`. Tests run against the recorded corpus.

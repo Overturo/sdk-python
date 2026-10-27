@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "overturo"
-version = "1.2.0"
+name = "overturo-sdk"
+version = "2.0.0"
 description = "Overturo SDK — authorize, oversight, and decisions for backend integrators"
 readme = "README.md"
 license = { text = "Apache-2.0" }

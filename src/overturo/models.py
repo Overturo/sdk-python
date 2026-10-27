@@ -355,7 +355,7 @@ class OverturoDecision:
     escalation: OverturoEscalation | None = None
     receipt: OverturoReceipt | None = None
     decision_latency_ms: float | None = None
-    chronicle_id: str | None = None
+    record_id: str | None = None
 
 
 def _require(d: dict[str, Any], key: str) -> Any:
@@ -458,7 +458,7 @@ def parse_decision(payload: dict[str, Any]) -> OverturoDecision:
         escalation=escalation,
         receipt=_parse_receipt(payload),
         decision_latency_ms=payload.get("decision_latency_ms"),
-        chronicle_id=payload.get("chronicle_id"),
+        record_id=payload.get("record_id"),
     )
 
 

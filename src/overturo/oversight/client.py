@@ -52,7 +52,7 @@ class OverturoOversight:
         sequence: SequenceManager,
         heartbeat: HeartbeatManager | None,
         logger: Logger,
-        touchpoint_id: str,
+        application_id: str,
     ) -> None:
         self._http = http
         self._discovery = discovery
@@ -60,7 +60,7 @@ class OverturoOversight:
         self._sequence = sequence
         self._heartbeat = heartbeat
         self._logger = logger
-        self._touchpoint_id = touchpoint_id
+        self._application_id = application_id
 
     # ── factory ────────────────────────────────────────────────────
 
@@ -70,7 +70,7 @@ class OverturoOversight:
         *,
         base_url: str,
         token: str,
-        touchpoint_id: str,
+        application_id: str,
         token_provider: Callable[[], str | Awaitable[str]] | None = None,
         heartbeat_enabled: bool = True,
         heartbeat_cadence_seconds: float = 60.0,
@@ -82,7 +82,7 @@ class OverturoOversight:
         http_client: httpx.AsyncClient | None = None,
         required_oap_version: str = SDK_DEFAULT_OAP_VERSION,
     ) -> OverturoOversight:
-        _validate_config(base_url=base_url, token=token, touchpoint_id=touchpoint_id)
+        _validate_config(base_url=base_url, token=token, application_id=application_id)
 
         logger = Logger(log_level)
         tokens = TokenManager(token, token_provider)
@@ -125,7 +125,7 @@ class OverturoOversight:
             sequence=sequence,
             heartbeat=heartbeat,
             logger=logger,
-            touchpoint_id=touchpoint_id,
+            application_id=application_id,
         )
 
     # ── public methods ─────────────────────────────────────────────
@@ -149,7 +149,7 @@ class OverturoOversight:
         seq = self._sequence.next()
         body = {
             "attestation_id": attestation_id or f"att-sdk-oversight-{uuid.uuid4()}",
-            "touchpoint_id": self._touchpoint_id,
+            "application_id": self._application_id,
             "agent_class": agent_class,
             "action_class": action_class,
             "decision": decision,
@@ -197,7 +197,7 @@ class OverturoOversight:
 
         body: dict[str, Any] = {
             "attestation_id": attest_result.attestation_id,
-            "touchpoint_id": self._touchpoint_id,
+            "application_id": self._application_id,
             "context_class": action_class,
             "proposed_action": proposed_action,
         }
@@ -238,7 +238,7 @@ class OverturoOversight:
 
         body: dict[str, Any] = {
             "scope": scope,
-            "touchpoint_id": self._touchpoint_id,
+            "application_id": self._application_id,
             "reason": reason,
         }
         if agent_class is not None:
@@ -325,12 +325,12 @@ class OverturoOversight:
             )
 
 
-def _validate_config(*, base_url: str, token: str, touchpoint_id: str) -> None:
+def _validate_config(*, base_url: str, token: str, application_id: str) -> None:
     if not base_url:
         raise OverturoConfigError("base_url is required")
     if not token:
         raise OverturoConfigError("token is required")
-    if not touchpoint_id:
-        raise OverturoConfigError("touchpoint_id is required")
+    if not application_id:
+        raise OverturoConfigError("application_id is required")
     if not base_url.startswith("http"):
         raise OverturoConfigError(f"base_url must start with http(s)://; got {base_url}")

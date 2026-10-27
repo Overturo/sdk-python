@@ -48,7 +48,7 @@ LogLevel = Literal["silent", "warn", "info", "debug"]
 class OversightConfig:
     base_url: str
     token: str
-    touchpoint_id: str
+    application_id: str
     token_provider: Callable[[], str | Awaitable[str]] | None = None
     heartbeat_enabled: bool = True
     heartbeat_cadence_seconds: int = 60

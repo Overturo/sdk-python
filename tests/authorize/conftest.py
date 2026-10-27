@@ -58,7 +58,7 @@ def make_receipt(
         "action": "read",
         "scope": "profile",
         "context_hash": "0" * 64,
-        "chronicle_id": "audit_rec_test_xyz",
+        "record_id": "audit_rec_test_xyz",
         "single_use": True,
     }
     if overrides:

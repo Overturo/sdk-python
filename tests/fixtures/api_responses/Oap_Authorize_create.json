@@ -1,0 +1,40 @@
+{
+  "operationId": "Oap_Authorize_create",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/grants/<PREFIX_ID:1>/authorize",
+    "headers": {
+      "Authorization": "Bearer ovt_test_token",
+      "Content-Type": "application/json",
+      "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+    },
+    "body": {
+      "nonce": "<NONCE>",
+      "action": "pay",
+      "scope": "payments:transfer",
+      "value": "10.00",
+      "currency": "USD",
+      "counterparty": "did:web:ledger.example.com",
+      "context": {
+        "invoice": "inv_corpus"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "decision": "allow",
+      "receipt": "<TOKEN>",
+      "receipt_jti": "corpus-nonce-10.00",
+      "iat": 1735689600,
+      "exp": 1735689660,
+      "record_id": "<PREFIX_ID:2>",
+      "iss": "https://overturo.com",
+      "oap_ver": "1.0"
+    }
+  },
+  "document": "933a97174969ed70"
+}

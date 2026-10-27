@@ -15,7 +15,7 @@ _EXPECTED_TOP_LEVEL_SYMBOLS = (
     # Authorize
     "OverturoAuthorize",
     "OverturoDecisionAdapter",
-    "OverturoChronicleStream",
+    "OverturoRecordStream",
     "DpopKeyPair",
     "access_token_hash",
     "jwk_thumbprint",

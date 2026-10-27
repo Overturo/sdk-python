@@ -1,4 +1,4 @@
-"""OverturoChronicleStream tests.
+"""OverturoRecordStream tests.
 
 Mocks the SDK client's `_signed_request` to feed deterministic batches;
 asserts cursor advancement, back-off engagement, and prefix validation.
@@ -16,7 +16,7 @@ from typing import Any
 
 import pytest
 
-from overturo import OverturoChronicleStream
+from overturo import OverturoRecordStream
 
 
 class _StopStream(Exception):
@@ -45,13 +45,13 @@ class _FakeClient:
 
 
 def _event(jti: str) -> dict[str, Any]:
-    return {"chronicle_id": f"chr_{jti}", "event_type": "conductor.policy_gate.evaluated"}
+    return {"record_id": f"chr_{jti}", "event_type": "conductor.policy_gate.evaluated"}
 
 
 def test_invalid_prefix_raises_at_construction() -> None:
     client = _FakeClient([])
     with pytest.raises(ValueError, match="event_type_prefix must be one of"):
-        OverturoChronicleStream(client, event_type_prefix="attacker.")
+        OverturoRecordStream(client, event_type_prefix="attacker.")
 
 
 def test_yields_events_from_a_single_batch() -> None:
@@ -65,7 +65,7 @@ def test_yields_events_from_a_single_batch() -> None:
     def stop_on_first_sleep(_: float) -> None:
         raise _StopStream
 
-    stream = OverturoChronicleStream(
+    stream = OverturoRecordStream(
         client,
         event_type_prefix="conductor.",
         sleep_fn=stop_on_first_sleep,
@@ -75,7 +75,7 @@ def test_yields_events_from_a_single_batch() -> None:
         for event in stream:
             yielded.append(event)
 
-    assert [e["chronicle_id"] for e in yielded] == ["chr_a", "chr_b"]
+    assert [e["record_id"] for e in yielded] == ["chr_a", "chr_b"]
 
 
 def test_cursor_advances_between_batches() -> None:
@@ -87,7 +87,7 @@ def test_cursor_advances_between_batches() -> None:
     )
 
     yielded: list[dict[str, Any]] = []
-    stream = OverturoChronicleStream(client, event_type_prefix="conductor.")
+    stream = OverturoRecordStream(client, event_type_prefix="conductor.")
     for event in stream:
         yielded.append(event)
         if len(yielded) >= 2:
@@ -111,7 +111,7 @@ def test_idle_backoff_increases() -> None:
         if len(sleeps) >= 3:
             raise _StopStream
 
-    stream = OverturoChronicleStream(
+    stream = OverturoRecordStream(
         client,
         event_type_prefix="conductor.",
         poll_interval=1.0,
@@ -136,7 +136,7 @@ def test_initial_cursor_passed_through() -> None:
     def stop(_: float) -> None:
         raise _StopStream
 
-    stream = OverturoChronicleStream(
+    stream = OverturoRecordStream(
         client,
         event_type_prefix="oap.",
         since="chr_start",

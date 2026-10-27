@@ -44,9 +44,14 @@
         "results": [],
         "error": null,
         "started_at": null,
-        "finished_at": null
+        "finished_at": null,
+        "allowance": {
+          "meter": "consent_records",
+          "remaining": 500,
+          "state": "ok"
+        }
       }
     }
   },
-  "document": "99dacb3771716c5b"
+  "document": "933a97174969ed70"
 }

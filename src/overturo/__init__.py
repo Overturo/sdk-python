@@ -10,14 +10,14 @@ exposes the authorize-side public symbols plus the cross-cutting
 errors / models / verify so the relocated tests pass.
 """
 
-__version__ = "1.2.0"
+__version__ = "2.0.0"
 
 from . import consent_records, decisions, meetings, receipts
 from .authorize import (
     DpopKeyPair,
     OverturoAuthorize,
-    OverturoChronicleStream,
     OverturoDecisionAdapter,
+    OverturoRecordStream,
     access_token_hash,
     jwk_thumbprint,
     peek_receipt,
@@ -137,7 +137,7 @@ __all__ = [
     "OverturoApiError",
     "OverturoAuthorize",
     "OverturoBlockInvocation",
-    "OverturoChronicleStream",
+    "OverturoRecordStream",
     "OverturoConfigError",
     "OverturoDecision",
     "OverturoDecisionAdapter",

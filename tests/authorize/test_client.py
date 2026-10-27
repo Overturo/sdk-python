@@ -39,7 +39,7 @@ def test_authorize_posts_with_bearer_and_dpop_headers(dpop_keypair):
                 "receipt": "h.p.s",
                 "jti": "n1",
                 "exp": int(time.time()) + 60,
-                "chronicle_id": "audit_rec_test",
+                "record_id": "audit_rec_test",
                 "oap_ver": "1.0",
             },
         )
@@ -114,7 +114,7 @@ def test_authorize_binds_dpop_proof_to_agent_token_via_ath(dpop_keypair):
                 "receipt": "h.p.s",
                 "jti": "n1",
                 "exp": int(time.time()) + 60,
-                "chronicle_id": "audit_rec_test",
+                "record_id": "audit_rec_test",
                 "oap_ver": "1.0",
             },
         )
